@@ -5,6 +5,8 @@ import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 
+import Link from "next/link"
+
 import { Edit, Trash2, Star, Calendar, Loader2 } from "lucide-react"
 import { motion } from "framer-motion"
 
@@ -59,7 +61,11 @@ export default function Home() {
             >
               <Button variant="outline" className="hover:text-black cursor-pointer transition duration-300 bg-black w-full">Menu</Button>
               <Button variant="outline" className="hover:text-black cursor-pointer transition duration-300 bg-black w-full">Scan</Button>
-              <Button variant="outline" className="hover:text-black cursor-pointer transition duration-300 bg-black w-full">History</Button>
+              <Link href={'/history'} className="w-full">
+                <Button variant="outline" className="hover:text-black cursor-pointer transition duration-300 bg-black w-full">
+                  History
+                </Button>
+              </Link>
               <Button
                 variant="outline"
                 className="hover:text-black cursor-pointer transition duration-300 bg-black w-full"
