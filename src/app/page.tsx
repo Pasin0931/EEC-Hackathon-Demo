@@ -33,9 +33,7 @@ export default function Home() {
 
   return (
     <div
-      className="flex justify-center items-center h-screen bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/background.jpg')" }}
-    >
+      className="flex justify-center items-center h-screen bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/background.jpg')" }}>
       <motion.div
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -44,6 +42,7 @@ export default function Home() {
           <h1 className="font-bold text-4xl text-center mb-8 tracking-wide">EEC Hackathon</h1>
 
           {aboutUs ? (
+
             <motion.div
               className="text-lg text-center text-white"
               initial={{ y: 20, opacity: 0 }}
@@ -55,25 +54,36 @@ export default function Home() {
                 Return to Menu
               </Button>
             </motion.div>
+
           ) : (
-            <div
-              className="flex flex-col items-center justify-center gap-4 text-lg"
-            >
-              <Button variant="outline" className="hover:text-black cursor-pointer transition duration-300 bg-black w-full">Menu</Button>
-              <Button variant="outline" className="hover:text-black cursor-pointer transition duration-300 bg-black w-full">Scan</Button>
+
+            <div className="flex flex-col items-center justify-center gap-4 text-lg">
+              
+              <Link href={'/menu'} className="w-full">
+                <Button variant="outline" className="hover:text-black cursor-pointer transition duration-300 bg-black w-full">
+                  Menu
+                </Button>
+              </Link>
+
+              <Link href={'/scan'} className="w-full">
+                <Button variant="outline" className="hover:text-black cursor-pointer transition duration-300 bg-black w-full">
+                  Scan
+                </Button>
+              </Link>
+
               <Link href={'/history'} className="w-full">
                 <Button variant="outline" className="hover:text-black cursor-pointer transition duration-300 bg-black w-full">
                   History
                 </Button>
               </Link>
-              <Button
-                variant="outline"
-                className="hover:text-black cursor-pointer transition duration-300 bg-black w-full"
-                onClick={() => setAboutUs(true)}
-              >
+
+              <Button variant="outline" className="hover:text-black cursor-pointer transition duration-300 bg-black w-full"
+                onClick={() => setAboutUs(true)}>
                 About us
               </Button>
+
             </div>
+            
           )}
         </Card>
       </ motion.div>
