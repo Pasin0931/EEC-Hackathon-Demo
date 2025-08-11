@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server'
-import { clearDb, historyDb } from '@/lib/database'
+import { clearDb, getAllData, insertData } from '@/lib/promotion'
 
 export async function GET() {
     try {
-        const data = await historyDb.getAllData()
+        const data = await getAllData()
         return NextResponse.json(data)
     } catch (error) {
         console.log("Error :", error)
@@ -13,16 +13,13 @@ export async function GET() {
 
 export async function POST(request) {
     try {
-        const body = await request.json()
-        // console.log("POSTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT YEAHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH:", body)
+        const { promotion, cost, picture, createdAt } = await request.json()
 
-        const { item, points, createdAt } = body
-
-        if (!item.trim() || !points) {
+        if (!promotion.trim() || !cost || !picture.trim()) {
             return NextResponse.json({ error: "All elements required." }, { status: 400 })
         }
 
-        const data = await historyDb.insertData(item, points, createdAt)
+        const data = await insertData(promotion, cost, picture, createdAt)
 
         if (data.changes > 0) {
             return NextResponse.json({ message: "Data inserted." }, { status: 200 })

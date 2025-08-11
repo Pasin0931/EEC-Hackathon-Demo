@@ -1,10 +1,10 @@
 import { NextResponse } from "next/server"
-import { clearDb, scandataDB } from '@/lib/database'
+import { historyDb } from '@/lib/database'
 
 export async function GET() {
     try {
 
-        const data = await scandataDB.getTotalPoints()
+        const data = await historyDb.getTotalPoints()
         return NextResponse.json(data)
 
     } catch (error) {

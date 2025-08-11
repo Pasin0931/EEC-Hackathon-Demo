@@ -5,11 +5,11 @@ let db = null
 
 export function getDb() {
     if (!db) {
-        const dbPath = path.join(process.cwd(), "scandata.db")
+        const dbPath = path.join(process.cwd(), "history.db")
         db = new Database(dbPath)
         db.pragma("journal_mode = WAL")
         db.exec(`
-            CREATE TABLE IF NOT EXISTS "scandata" (
+            CREATE TABLE IF NOT EXISTS "history" (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 item TEXT NOT NULL,
                 points INTEGER,
@@ -23,25 +23,28 @@ export function getDb() {
 
 export function clearDb() {
     const db = getDb()
-    db.prepare('DELETE FROM "scandata"').run()
-    db.prepare("DELETE FROM sqlite_sequence WHERE name = 'scandata'").run()
+    db.prepare('DELETE FROM "history"').run()
+    db.prepare("DELETE FROM sqlite_sequence WHERE name = 'history'").run()
 }
 
-export const scandataDB = {
-    insertData(item, points) {
-        const db = getDb()
-        const stmt = db.prepare('INSERT INTO "scandata" (item, points) VALUES(?, ?)')
-        return stmt.run(item, points)
-    },
+export const historyDb = {
 
     getAllData() {
         const db = getDb()
-        return db.prepare(`SELECT * FROM "scandata" ORDER BY id`).all()
+        return db.prepare(`SELECT * FROM "history" ORDER BY id`).all()
     },
 
     getTotalPoints() {
         const db = getDb()
-        const getValue = db.prepare(`SELECT SUM(points) AS totalPoints FROM scandata`).get()
+        const getValue = db.prepare(`SELECT SUM(points) AS totalPoints FROM history`).get()
         return getValue.totalPoints ?? 0
+    },
+
+    insertData(item, points) {
+        const db = getDb()
+        const stmt = db.prepare('INSERT INTO "history" (item, points) VALUES(?, ?)')
+        return stmt.run(item, points)
     }
+
+
 }

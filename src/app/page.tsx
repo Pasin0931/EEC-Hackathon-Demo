@@ -55,7 +55,7 @@ export default function Home() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.05 }}>
         <div className="flex justify-end">
-          <Card className="flex flex-row items-center w-25 p-3 border-white border-4 rounded-2xl shadow-2xl backdrop-blur-lg transition-all duration-500 bg-black/70 text-white mb-2">{totalPoints} points</Card>
+          <Card className="flex flex-row items-center w-35 p-3 border-white border-4 rounded-2xl shadow-2xl backdrop-blur-lg transition-all duration-500 bg-black/70 text-white mb-2">{totalPoints} points</Card>
         </div>
         <Card className="p-10 bg-black/70 text-white border-4 border-white rounded-2xl shadow-2xl backdrop-blur-lg transition-all duration-500">
           <h1 className="font-bold text-4xl text-center mb-8 tracking-wide">EEC Hackathon</h1>

@@ -114,7 +114,7 @@ export default function History() {
 
                     <Card className="p-10 bg-black/70 text-white border-4 border-white rounded-2xl shadow-2xl backdrop-blur-lg transition-all duration-500">
                         <h1 className="font-bold text-4xl text-center mb-2 tracking-wide">History</h1>
-                        <h2 className="text-center">This is your previous scan history.</h2>
+                        <h2 className="text-center">This is where you view your previous activity.</h2>
                         <div>
                             {userData.length === 0 ? (
                                 <Card className="flex flex-cols justify-center items-center bg-black">
@@ -126,13 +126,13 @@ export default function History() {
                                         {userData.map((usr: any) => (
                                             <Card key={usr.id} className="gap-2 p-4 bg-transparent text-white">
                                                 <h3 className="text-bold">{usr.item}</h3>
-                                                <h4>Points : {usr.points}</h4>
+                                                <h4>Point : {usr.points}</h4>
                                                 <p>{usr.createdAt}</p>
                                             </Card>
                                         ))}
                                     </Card>
                                     <h5 className="flex flex-cols justify-center items-center mt-5">Accumulative point : {totalPoints}</h5>
-                                    <h5 className="flex flex-cols justify-center items-center">Total scan time : {scanTime}</h5>
+                                    <h5 className="flex flex-cols justify-center items-center">Total activity : {scanTime}</h5>
                                 </div>
                             )}
                         </div>
