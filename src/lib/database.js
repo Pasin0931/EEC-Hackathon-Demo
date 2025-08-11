@@ -37,5 +37,11 @@ export const scandataDB = {
     getAllData() {
         const db = getDb()
         return db.prepare(`SELECT * FROM "scandata" ORDER BY id`).all()
+    },
+
+    getTotalPoints() {
+        const db = getDb()
+        const getValue = db.prepare(`SELECT SUM(points) AS totalPoints FROM scandata`).get()
+        return getValue.totalPoints ?? 0
     }
 }
