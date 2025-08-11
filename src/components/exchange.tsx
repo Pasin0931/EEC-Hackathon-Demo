@@ -31,25 +31,30 @@ export default function Scan() {
     }, [])
 
     return (
-        <div className="flex flex-cols justify-center items-center h-screen">
-            <motion.div
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.05 }}>
-                <div className="flex justify-end">
-                    <Card className="flex flex-row items-center w-25 p-3 border-white border-4 rounded-2xl shadow-2xl backdrop-blur-lg transition-all duration-500 bg-black/70 text-white mb-2">{totalPoints} points</Card>
-                </div>
-                <Card className="p-10 bg-black/70 text-white border-4 border-white rounded-2xl shadow-2xl backdrop-blur-lg transition-all duration-500">
-                    <h1 className="font-bold text-4xl text-center tracking-wide">Exchange</h1>
-                    <h2 className="text-center tracking-wide mb-2">You can exchange your points for reward here !</h2>
-                    <Link href={'/'} className="w-full">
-                        <Button variant={"outline"} className="hover:text-black cursor-pointer transition duration-300 bg-black w-full">
-                            Return to Menu
-                        </Button>
-                    </Link>
-                </Card>
+        <div
+            className="flex justify-center items-center h-screen bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: "url('/background.jpg')" }}
+        >
+            <div className="flex flex-cols justify-center items-center h-screen">
+                <motion.div
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.05 }}>
+                    <div className="flex justify-end">
+                        <Card className="flex flex-row items-center w-25 p-3 border-white border-4 rounded-2xl shadow-2xl backdrop-blur-lg transition-all duration-500 bg-black/70 text-white mb-2">{totalPoints} points</Card>
+                    </div>
+                    <Card className="p-10 bg-black/70 text-white border-4 border-white rounded-2xl shadow-2xl backdrop-blur-lg transition-all duration-500">
+                        <h1 className="font-bold text-4xl text-center tracking-wide">Exchange</h1>
+                        <h2 className="text-center tracking-wide mb-2">You can exchange your points for reward here !</h2>
+                        <Link href={'/'} className="w-full">
+                            <Button variant={"outline"} className="hover:text-black cursor-pointer transition duration-300 bg-black w-full">
+                                Return to Menu
+                            </Button>
+                        </Link>
+                    </Card>
 
-            </motion.div>
+                </motion.div>
+            </div>
         </div>
     )
 }
