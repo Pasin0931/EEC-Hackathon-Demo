@@ -27,47 +27,52 @@ export default function Menu() {
                             <Card className="p-4 text-center gap-2 bg-transparent text-white">
                                 <img src="/images/aluminum-can.jpg" alt="Aluminum Can" className="mx-auto mb-2 w-18 h-18 object-contain border-2 border-white rounded" />
                                 <h3>Aluminum Can</h3>
-                                <h4>1 Point</h4>
+                                <h4>0.1 Point</h4>
                             </Card>
                             <Card className="p-4 text-center gap-2 bg-transparent text-white">
                                 <img src="/images/banana-peel.jpeg" alt="Banana Peel" className="mx-auto mb-2 w-18 h-18 object-contain border-2 border-white rounded" />
                                 <h3>Banana Peel</h3>
-                                <h4>1 Point</h4>
+                                <h4>0.1 Point</h4>
                             </Card>
                             <Card className="p-4 text-center gap-2 bg-transparent text-white">
                                 <img src="/images/cardboard-box.jpg" alt="Cardboard Box" className="mx-auto mb-2 w-18 h-18 object-contain border-2 border-white rounded" />
                                 <h3>Cardboard Box</h3>
-                                <h4>1 Point</h4>
+                                <h4>0.1 Point</h4>
                             </Card>
                             <Card className="p-4 text-center gap-2 bg-transparent text-white">
                                 <img src="/images/chip-bag.jpg" alt="Chip Bag" className="mx-auto mb-2 w-18 h-18 object-contain border-2 border-white rounded" />
                                 <h3>Chip Bag</h3>
-                                <h4>1 Point</h4>
+                                <h4>0.1 Point</h4>
                             </Card>
                             <Card className="p-4 text-center gap-2 bg-transparent text-white">
                                 <img src="/images/food-wrapper.jpg" alt="Food Wrapper" className="mx-auto mb-2 w-18 h-18 object-contain border-2 border-white rounded" />
                                 <h3>Food Wrapper</h3>
-                                <h4>1 Point</h4>
+                                <h4>0.1 Point</h4>
                             </Card>
                             <Card className="p-4 text-center gap-2 bg-transparent text-white">
                                 <img src="/images/glass-jar.jpg" alt="Glass Jar" className="mx-auto mb-2 w-18 h-18 object-contain border-2 border-white rounded" />
                                 <h3>Glass Jar</h3>
-                                <h4>1 Point</h4>
+                                <h4>0.1 Point</h4>
                             </Card>
                             <Card className="p-4 text-center gap-2 bg-transparent text-white">
                                 <img src="/images/old-newspaper.jpg" alt="Old Newspaper" className="mx-auto mb-2 w-18 h-18 object-contain border-2 border-white rounded" />
                                 <h3>Old Newspaper</h3>
-                                <h4>1 Point</h4>
+                                <h4>0.1 Point</h4>
                             </Card>
                             <Card className="p-4 text-center gap-2 bg-transparent text-white">
                                 <img src="/images/plastic-bottle.jpg" alt="Plastic Bottle" className="mx-auto mb-2 w-18 h-18 object-contain border-2 border-white rounded" />
                                 <h3>Plastic Bottle</h3>
-                                <h4>1 Point</h4>
+                                <h4>0.1 Point</h4>
                             </Card>
                             <Card className="p-4 text-center gap-2 bg-transparent text-white">
                                 <img src="/images/styrofoam-cup.jpg" alt="Styrofoam Cup" className="mx-auto mb-2 w-18 h-18 object-contain border-2 border-white rounded" />
                                 <h3>Styrofoam Cup</h3>
-                                <h4>1 Point</h4>
+                                <h4>0.1 Point</h4>
+                            </Card>
+                            <Card className="p-4 text-center gap-2 bg-transparent text-white">
+                                <img src="/images/stainless_can.png" alt="Styrofoam Cup" className="mx-auto mb-2 w-18 h-18 object-contain border-2 border-white rounded" />
+                                <h3>Stainless Can</h3>
+                                <h4>0.1 Point</h4>
                             </Card>
                         </div>
 
