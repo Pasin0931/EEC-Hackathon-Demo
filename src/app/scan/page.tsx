@@ -2,6 +2,7 @@
 import { centerText, Scanner } from "@yudiel/react-qr-scanner";
 import { useState } from "react";
 import { CameraComponent } from "@/components/camera";
+import { redirect, RedirectType } from "next/navigation";
 
 type BarcodeFormat =
   | "aztec"
@@ -58,6 +59,7 @@ export default function ScanPage() {
   const [categories, setCategories] = useState<string[]>([]);
   const [packaging, setPackaging] = useState<string[]>([]);
   const [showConfirmSection, setShowConfirmSection] = useState(false);
+  const [responseBody, setResponseBody] = useState<object>({});
 
   const fetchingData = async (id: string) => {
     try {
@@ -84,9 +86,36 @@ export default function ScanPage() {
             {},
         ),
       );
+
+      const now = new Date();
+      const currentTime = now.toLocaleTimeString();
+
+      const body = {
+        item: id,
+        points: 0.1,
+        createdAt: currentTime,
+      };
+
+      setResponseBody(body);
     } catch (e) {
       console.log(e);
     }
+  };
+
+  const uploadingData = async () => {
+    if (packaging == null && categories == null) {
+      return;
+    }
+
+    const result = await fetch("api//scanApi", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(responseBody),
+    });
+
+    redirect("/");
   };
 
   return (
@@ -151,7 +180,7 @@ export default function ScanPage() {
             <div className="flex gap-3 mt-4">
               <button
                 className="flex-1 bg-green-500 text-white rounded-lg px-4 py-2 font-medium hover:bg-green-600 transition"
-                onClick={() => alert("Confirmed!")}
+                onClick={() => uploadingData()}
               >
                 Confirm
               </button>
